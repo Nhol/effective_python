@@ -61,6 +61,27 @@ class ReadVisit(object):
 
 
 visits = ReadVisit('./my_numbers.txt')
+percentages_4 = normalize(visits)
+print('example 4')
+print(percentages_4)
 
+
+def normalize_defensive(numbers):
+    if iter(numbers) is iter(numbers):
+        raise TypeError('Must supply a container')
+    total = sum(numbers)
+    result = []
+    for value in numbers:
+        percent = 100 * value / total
+        result.append(percent)
+    return result
+
+
+# percentages_5 = normalize_defensive(it)
+percentages_6 = normalize_defensive(visits)
+percentages_7 = normalize_defensive(visits)
+print('example 5, 6, 7')
+print(percentages_6)
+print(percentages_7)
 
 print()
